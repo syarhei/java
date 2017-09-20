@@ -1,0 +1,32 @@
+<project name="lab_01" default = "copy" >
+
+    <target name="init">
+        <echo message="Start building lab_01" />
+    </target>
+
+    <target name="clean" depends ="init">
+        <delete dir= "D:\7\java\libs\tomcat-9.0\webapps\lab_01\" />
+    </target>
+
+    <target name="create" depends ="clean">
+        <mkdir dir= "D:\7\java\libs\tomcat-9.0\webapps\lab_01\" />
+        <mkdir dir= "D:\7\java\libs\tomcat-9.0\webapps\lab_01\web\WEB-INF" />
+        <mkdir dir= "D:\7\java\libs\tomcat-9.0\webapps\lab_01\css" />
+        <mkdir dir= "D:\7\java\libs\tomcat-9.0\webapps\lab_01\images" />
+    </target>
+
+    <target name="copy" depends ="create">
+        <copy file= "D:\7\java\labs\lab_01\web\WEB-INF\web.xml"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\WEB-INF\" />
+        <copy file= "D:\7\java\labs\lab_01\web\index.html"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web" />
+        <copy file= "D:\7\java\labs\lab_01\web\address.html"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web" />
+        <copy file= "D:\7\java\labs\lab_01\web\education.html"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web" />
+        <copy file= "D:\7\java\labs\lab_01\web\css\default.css"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web\css" />
+        <copy file= "D:\7\java\labs\lab_01\web\images\mini.jpg"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web\images" />
+    </target>
+</project>

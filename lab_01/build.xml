@@ -16,17 +16,17 @@
     </target>
 
     <target name="copy" depends ="create">
-        <copy file= "D:\7\java\labs\lab_01\web\WEB-INF\web.xml"
+        <copy file= "web/WEB-INF/web.xml"
               todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\WEB-INF\" />
-        <copy file= "D:\7\java\labs\lab_01\web\index.html"
-              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web" />
-        <copy file= "D:\7\java\labs\lab_01\web\address.html"
-              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web" />
-        <copy file= "D:\7\java\labs\lab_01\web\education.html"
-              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web" />
-        <copy file= "D:\7\java\labs\lab_01\web\css\default.css"
-              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web\css" />
-        <copy file= "D:\7\java\labs\lab_01\web\images\mini.jpg"
-              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\web\images" />
+        <copy file= "web/index.html"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01" />
+        <copy file= "web/address.html"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01" />
+        <copy file= "web/education.html"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01" />
+        <copy file= "web/css/default.css"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\css" />
+        <copy file= "web/images/mini.jpg"
+              todir="D:\7\java\libs\tomcat-9.0\webapps\lab_01\images" />
     </target>
 </project>

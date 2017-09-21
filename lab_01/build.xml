@@ -10,7 +10,6 @@
 
     <target name="create" depends ="clean">
         <mkdir dir= "D:\7\java\libs\tomcat-9.0\webapps\lab_01\" />
-        <mkdir dir= "D:\7\java\libs\tomcat-9.0\webapps\lab_01\web\WEB-INF" />
         <mkdir dir= "D:\7\java\libs\tomcat-9.0\webapps\lab_01\css" />
         <mkdir dir= "D:\7\java\libs\tomcat-9.0\webapps\lab_01\images" />
     </target>

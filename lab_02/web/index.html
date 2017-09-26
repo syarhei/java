@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Page</title>
+    <script src="./scripts/jquery-3.2.1.js"></script>
+</head>
+<body>
+
+<div>
+    <input type="text" title="First Name" id="FirstName" value="Siarhei">
+    <input type="text" title="Last Name" id="LastName" value="Murkou">
+    <input type="button" value="GET" onclick="sendRequest('GET')">
+    <input type="button" value="POST" onclick="sendRequest('POST')">
+    <input type="button" value="PUT" onclick="sendRequest('PUT')">
+    <p id="result-field">
+    </p>
+</div>
+
+<script>
+    function sendRequest(type) {
+        $.ajax({
+            url: "/servlet",
+            method: type,
+            data: {
+                FirstName: $("#FirstName").val(),
+                LastName: $("#LastName").val()
+            },
+            success: result => {
+                $("#result-field").html(result);
+            },
+            error: error => {
+                $("#result-field").html("ERROR: Check console");
+                console.log(error);
+            }
+        })
+    }
+</script>
+
+</body>
+</html>

@@ -12,7 +12,6 @@
     <input type="text" title="Last Name" id="LastName" value="Murkou">
     <input type="button" value="GET" onclick="sendRequest('GET')">
     <input type="button" value="POST" onclick="sendRequest('POST')">
-    <input type="button" value="PUT" onclick="sendRequest('PUT')">
     <p id="result-field">
     </p>
 </div>
@@ -20,7 +19,7 @@
 <script>
     function sendRequest(type) {
         $.ajax({
-            url: "/servlet",
+            url: "servlet",
             method: type,
             data: {
                 FirstName: $("#FirstName").val(),

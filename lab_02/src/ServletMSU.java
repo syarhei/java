@@ -1,13 +1,9 @@
-import com.sun.deploy.net.HttpResponse;
-import com.sun.deploy.net.MessageHeader;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.net.URL;
 
 @WebServlet(name = "ServletMSU", urlPatterns = "/servlet")
 public class ServletMSU extends HttpServlet {

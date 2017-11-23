@@ -1,0 +1,32 @@
+.table {
+    display: table;
+    width: 30%;
+}
+
+.table-head {
+    background-color: #EEE;
+    display: table-header-group;
+}
+
+.table-cell {
+    border: 1px solid #999999;
+    display: table-cell;
+    padding: 3px 10px;}
+
+.table-row {
+    display: table-row-group;
+}
+
+#info {
+    font-size: 18px;
+    font-weight: bold;
+    color: blue;
+    margin: 5px 5px;
+}
+
+#info-page {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    margin: 5px 5px;
+}

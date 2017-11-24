@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <tlib-version>1.0</tlib-version>
+    <short-name>msu</short-name>
+    <uri>custom.tag.lib.tdl</uri>
+
+    <tag>
+        <name>dossier</name>
+        <tag-class>custom.tag.lib.Dossier</tag-class>
+        <body-content>JSP</body-content>
+    </tag>
+
+    <tag>
+        <name>surname</name>
+        <tag-class>custom.tag.lib.Surname</tag-class>
+        <body-content>empty</body-content>
+        
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>name</name>
+        <tag-class>custom.tag.lib.Name</tag-class>
+        <body-content>empty</body-content>
+
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>sex</name>
+        <tag-class>custom.tag.lib.Sex</tag-class>
+        <body-content>empty</body-content>
+
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>submit</name>
+        <tag-class>custom.tag.lib.Submit</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
+</taglib>

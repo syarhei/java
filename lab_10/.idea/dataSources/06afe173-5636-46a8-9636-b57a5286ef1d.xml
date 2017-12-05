@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="lab_10@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="bo_spring"/>
+    <schema id="3" parent="1" name="crs"/>
+    <schema id="4" parent="1" name="crs-java"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="npc"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="lab_10">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <table id="10" parent="9" name="t1"/>
+    <routine id="11" parent="9" name="insertToT1">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="12" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="13" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <argument id="14" parent="11" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="15" parent="11" name="name">
+      <DataType>varchar(30)|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>

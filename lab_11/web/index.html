@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <div>
+        <input type="text" title="" id="x" placeholder="x">
+        <input type="text" title="" id="y" placeholder="y">
+        <input type="text" title="" id="z" readonly="readonly">
+    </div>
+    <div>
+        <input type="button" value="sum" onclick="sum()">
+    </div>
+</div>
+
+<div>
+    <div>
+        <input type="text" title="" id="n" placeholder="random value (int)">
+        <div id="result-task-2-3"></div>
+    </div>
+    <div>
+        <input type="button" value="xml" onclick="getXML()">
+        <input type="button" value="json" onclick="getJSON()">
+    </div>
+</div>
+
+<div>
+    <div>
+        <input type="button" value="sync" onclick="getSync()">
+        <input type="button" value="async" onclick="getAsync()">
+    </div>
+</div>
+
+<script>
+
+    function getAsync() {
+        sum();
+        getXML();
+        getJSON();
+    }
+    
+    function getSync() {
+        sum(false);
+        getXML(false);
+        getJSON(false);
+    }
+
+    function sum(async = true) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "/sss/header", async);
+        xhr.setRequestHeader("x", document.getElementById("x").value);
+        xhr.setRequestHeader("y", document.getElementById("y").value);
+        xhr.send();
+        if (async) {
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    document.getElementById("z").value = xhr.getResponseHeader("z");
+                }
+            };
+        } else {
+            document.getElementById("z").value = xhr.getResponseHeader("z");
+        }
+    }
+    
+    function getXML(async = true) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "/sss/xml", async);
+        xhr.setRequestHeader("XRand-N", document.getElementById("n").value);
+        xhr.send();
+        if (async) {
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    document.getElementById("result-task-2-3").innerHTML = stringifyXML(xhr);
+                }
+            };
+        } else {
+            document.getElementById("result-task-2-3").innerHTML = stringifyXML(xhr);
+        }
+    }
+    
+    function getJSON(async = true) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "/sss/json", async);
+        xhr.setRequestHeader("XRand-N", document.getElementById("n").value);
+        xhr.send();
+        if (async) {
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    document.getElementById("result-task-2-3").innerHTML = stringifyJSON(xhr);
+                }
+            };
+        } else {
+            document.getElementById("result-task-2-3").innerHTML = stringifyJSON(xhr);
+        }
+    }
+
+    function stringifyXML(req){
+        const xmlDoc = req.responseXML;
+        const arr = Array.from(xmlDoc.getElementsByTagName("num"));
+        return arr.map(number => number.innerHTML).join(" ");
+    }
+
+    function stringifyJSON(req){
+        const arr = JSON.parse(req.responseText);
+        return arr.join(" ");
+    }
+
+</script>
+
+</body>
+</html>

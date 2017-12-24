@@ -3,7 +3,6 @@ package servlets;
 import sender.MailSender;
 
 import javax.mail.*;
-import javax.mail.internet.InternetAddress;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

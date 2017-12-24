@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="windows-1251">
+    <title>lab 15</title>
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<div>Get messages</div>
+<div>
+    <input type="text" id="username" title="username">
+    <input type="password" id="password" title="password">
+    <input type="button" onclick="getMessages()" value="get">
+
+    <div id="messages"></div>
+</div>
+
+<script>
+    function getMessages() {
+        $.ajax({
+            method: "GET",
+            url: "/api/email/message",
+            data: {
+                username: $("#username").val(),
+                password: $("#password").val()
+            },
+            success: result => {
+                $("#messages").html(result);
+            },
+            error: error => {
+                console.log(error);
+            }
+        })
+    }
+</script>
+
+</body>
+</html>
